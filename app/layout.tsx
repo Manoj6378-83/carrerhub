@@ -39,10 +39,10 @@ export const metadata: Metadata = {
     siteName: 'CareerHub',
     images: [
       {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'CareerHub - Find Jobs & Gig Work Online',
+        url: '/careerhubLogo.png',
+        width: 768,
+        height: 768,
+        alt: 'CareerHub logo',
       },
     ],
   },
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'CareerHub - Find Jobs & Gig Work Online',
     description: 'Discover job opportunities, gig work, and start earning today.',
-    images: ['/twitter-image.jpg'],
+    images: ['/careerhubLogo.png'],
     creator: '@careerhub',
   },
   verification: {
@@ -58,6 +58,11 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
+      {
+        url: '/careerhubLogo.png',
+        rel: 'icon',
+        type: 'image/png',
+      },
       {
         url: '/icon-light-32x32.png',
         media: '(prefers-color-scheme: light)',
@@ -73,7 +78,7 @@ export const metadata: Metadata = {
     ],
     apple: '/apple-icon.png',
   },
-    generator: 'v0.app'
+    generator: 'career-hub'
 }
 
 export default function RootLayout({
@@ -92,7 +97,7 @@ export default function RootLayout({
               '@type': 'Organization',
               name: 'CareerHub',
               url: 'https://carrerhub.com',
-              logo: 'https://carrerhub.com/logo.png',
+              logo: 'https://carrerhub.com/careerhubLogo.png',
               description: 'CareerHub is a comprehensive job board and gig work platform connecting job seekers with opportunities.',
               sameAs: [
                 'https://twitter.com/careerhub',
@@ -102,7 +107,7 @@ export default function RootLayout({
               contactPoint: {
                 '@type': 'ContactPoint',
                 contactType: 'Customer Support',
-                email: 'support@carrerhub.com',
+                email: 'careerhub2025@gmail.com',
               },
             }),
           }}

@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { Menu, X, BarChart3 } from 'lucide-react'
 import { useState } from 'react'
@@ -12,11 +13,18 @@ export function Header() {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">C</span>
-            </div>
-            <span className="font-bold text-xl hidden sm:inline">CareerHub</span>
+          <Link href="/" className="flex items-center gap-3">
+            <Image
+              src="/careerhubLogo.png"
+              alt="CareerHub logo"
+              width={48}
+              height={48}
+              className="h-10 w-auto"
+              priority
+            />
+            <span className="font-bold text-xl hidden sm:inline text-foreground">
+              CareerHub
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
