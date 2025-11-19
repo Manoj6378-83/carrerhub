@@ -1,6 +1,6 @@
 'use client'
 
-import Link from 'link'
+import Link from 'next/link'
 import { MapPin, DollarSign, Heart, Trash2, Clock } from 'lucide-react'
 import { useState } from 'react'
 
