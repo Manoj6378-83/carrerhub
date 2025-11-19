@@ -79,6 +79,60 @@ const jobs = [
   }
 ]
 
+const jobPostingSchema = {
+  '@context': 'https://schema.org',
+  '@graph': jobs.map(job => {
+    const isRemote = /remote|anywhere/i.test(job.location)
+    const employmentType =
+      job.type === 'Full-time'
+        ? 'FULL_TIME'
+        : job.type === 'Part-time'
+        ? 'PART_TIME'
+        : job.type === 'Freelance'
+        ? 'CONTRACTOR'
+        : 'OTHER'
+
+    const baseSchema: Record<string, unknown> = {
+      '@type': 'JobPosting',
+      title: job.title,
+      description: `${job.title} opportunity at ${job.company} located ${job.location}. Employment type: ${job.type}. Required skills: ${job.tags.join(', ')}.`,
+      hiringOrganization: {
+        '@type': 'Organization',
+        name: job.company,
+        sameAs: 'https://carrerhub.vercel.app',
+      },
+      identifier: {
+        '@type': 'PropertyValue',
+        name: 'CareerHub Featured Jobs',
+        value: job.id,
+      },
+      employmentType,
+      datePosted: new Date().toISOString(),
+      validThrough: new Date(Date.now() + 1000 * 60 * 60 * 24 * 30).toISOString(),
+      jobLocationType: isRemote ? 'TELECOMMUTE' : 'ON_SITE',
+      applicantLocationRequirements: isRemote
+        ? {
+            '@type': 'Country',
+            name: 'India',
+          }
+        : undefined,
+    }
+
+    if (!isRemote) {
+      baseSchema.jobLocation = {
+        '@type': 'Place',
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: job.location,
+          addressCountry: 'India',
+        },
+      }
+    }
+
+    return baseSchema
+  }),
+}
+
 export function FeaturedJobs() {
   const [liked, setLiked] = useState<number[]>([])
 
@@ -88,14 +142,22 @@ export function FeaturedJobs() {
 
   return (
     <section className="py-16 md:py-24 bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jobPostingSchema) }}
+      />
       <div className="container mx-auto px-4">
         <div className="space-y-4 mb-12">
-          <div className="flex items-center justify-between">
-            <div>
+          <div className="flex items-center justify-between gap-6 flex-wrap">
+            <div className="max-w-3xl">
               <h2 className="text-3xl md:text-4xl font-bold">Featured Opportunities</h2>
-              <p className="text-muted-foreground mt-2">Discover the latest job openings and gig work</p>
+              <p className="text-muted-foreground mt-2 leading-relaxed">
+                Discover the latest remote, hybrid, and on-site jobs that are trending on CareerHub. Each
+                listing includes transparent pay ranges, core skills, and hiring locations so search engines
+                and candidates understand exactly what&apos;s on offer.
+              </p>
             </div>
-            <Link href="/jobs" className="text-primary hover:text-primary/80 transition font-medium">
+            <Link href="/jobs" className="text-primary hover:text-primary/80 transition font-medium whitespace-nowrap">
               View all →
             </Link>
           </div>
