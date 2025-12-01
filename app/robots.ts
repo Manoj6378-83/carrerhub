@@ -15,6 +15,6 @@ export default function robots(): MetadataRoute.Robots {
         crawlDelay: 0,
       },
     ],
-    sitemap: 'https://carrerhub.com/sitemap.xml',
+    sitemap: 'https://carrerhub.vercel.app/sitemap.xml',
   }
 }

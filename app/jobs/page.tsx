@@ -29,7 +29,7 @@ export default function JobsPage() {
             '@type': 'CollectionPage',
             name: 'Job Listings',
             description: 'Browse 50,000+ job opportunities on CareerHub',
-            url: 'https://carrerhub.com/jobs',
+            url: 'https://carrerhub.vercel.app/jobs',
             mainEntity: {
               '@type': 'ItemList',
               itemListElement: [

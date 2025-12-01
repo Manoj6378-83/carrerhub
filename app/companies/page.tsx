@@ -15,7 +15,7 @@ export default function CompaniesPage() {
             '@type': 'CollectionPage',
             name: 'Companies Directory',
             description: 'Browse top companies and read employee reviews on CareerHub',
-            url: 'https://carrerhub.com/companies',
+            url: 'https://carrerhub.vercel.app/companies',
             mainEntity: {
               '@type': 'ItemList',
               itemListElement: [

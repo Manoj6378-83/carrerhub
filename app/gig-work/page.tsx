@@ -25,7 +25,7 @@ export default function GigWorkPage() {
             '@type': 'CollectionPage',
             name: 'Gig Work & Freelance Opportunities',
             description: 'Browse 10,000+ freelance gigs and short-term projects on CareerHub',
-            url: 'https://carrerhub.com/gig-work',
+            url: 'https://carrerhub.vercel.app/gig-work',
             mainEntity: {
               '@type': 'ItemList',
               itemListElement: [

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     title: 'CareerHub - Find Jobs & Gig Work Online',
     description: 'Discover 50,000+ job opportunities and start earning today.',
     type: 'website',
-    url: 'https://carrerhub.com',
+    url: 'https://carrerhub.vercel.app',
   },
 }
 
@@ -34,7 +34,7 @@ export default function Home() {
             '@type': 'WebPage',
             name: 'CareerHub - Find Jobs & Gig Work',
             description: 'Discover job opportunities and gig work on CareerHub.',
-            url: 'https://carrerhub.com',
+            url: 'https://carrerhub.vercel.app',
             mainEntity: {
               '@type': 'WebApplication',
               name: 'CareerHub',

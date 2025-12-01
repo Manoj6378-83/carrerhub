@@ -28,14 +28,14 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://carrerhub.com',
+    canonical: 'https://carrerhub.vercel.app',
   },
   openGraph: {
     title: 'CareerHub - Find Jobs & Gig Work Online | India\'s Job Platform',
     description: 'Discover 50,000+ job opportunities, gig work, and compare companies. Start earning today on CareerHub.',
     type: 'website',
     locale: 'en_IN',
-    url: 'https://carrerhub.com',
+    url: 'https://carrerhub.vercel.app',
     siteName: 'CareerHub',
     images: [
       {
@@ -57,26 +57,8 @@ export const metadata: Metadata = {
     google: 'YOUR_GOOGLE_VERIFICATION_CODE_HERE',
   },
   icons: {
-    icon: [
-      {
-        url: '/careerhubLogo.png',
-        rel: 'icon',
-        type: 'image/png',
-      },
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: '/careerhubLogo.png',
+    apple: '/careerhubLogo.png',
   },
     generator: 'career-hub'
 }
@@ -96,8 +78,8 @@ export default function RootLayout({
               '@context': 'https://schema.org',
               '@type': 'Organization',
               name: 'CareerHub',
-              url: 'https://carrerhub.com',
-              logo: 'https://carrerhub.com/careerhubLogo.png',
+              url: 'https://carrerhub.vercel.app',
+              logo: 'https://carrerhub.vercel.app/careerhubLogo.png',
               description: 'CareerHub is a comprehensive job board and gig work platform connecting job seekers with opportunities.',
               sameAs: [
                 'https://twitter.com/careerhub',
@@ -118,12 +100,12 @@ export default function RootLayout({
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'WebSite',
-              url: 'https://carrerhub.com',
+              url: 'https://carrerhub.vercel.app',
               potentialAction: {
                 '@type': 'SearchAction',
                 target: {
                   '@type': 'EntryPoint',
-                  urlTemplate: 'https://carrerhub.com/jobs?search={search_term_string}',
+                  urlTemplate: 'https://carrerhub.vercel.app/jobs?search={search_term_string}',
                 },
                 'query-input': 'required name=search_term_string',
               },
